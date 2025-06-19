@@ -1,0 +1,6 @@
+<Files "roster.html">
+    AuthType Basic
+    AuthName "Restricted Area"
+    AuthUserFile "C:/Users/PC/Documents/Open Polytechnic work/IT and website design/BIT607 Web Development/Snazzy Paws Grooming - Bootstrap/dog-grooming-website/.htpasswd"
+    Require valid-user
+</Files>
