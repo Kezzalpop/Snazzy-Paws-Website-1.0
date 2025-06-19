@@ -47,10 +47,10 @@ p {
 }
 
 .logo-img {
-    height: 180px;
-    width: auto;
-    display: block;
-    margin-right: 1rem;
+  max-width: 200px !important;
+  width: 200px !important;
+  height: auto !important;
+  display: inline-block;
 }
 
 .nav-links {
@@ -273,6 +273,7 @@ footer {
 }
 
 /* Gallery Grid */
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -408,22 +409,17 @@ footer {
         width: 100%;
         max-width: 300px;
     }
-}/* Add to your styles.css */
+}
 .social-links {
     margin-top: 0.5rem;
     display: flex;
     justify-content: center;
     gap: 1.2rem;
 }
-.social-icon {
-    width: 100px;
-    height: 100px;
-    transition: transform 0.2s;
-}
+
 .social-icon:hover {
     transform: scale(1.15);
 }
-
 
 /* Responsive Design */
 @media (max-width: 700px) {
