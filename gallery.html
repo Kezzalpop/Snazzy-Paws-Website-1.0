@@ -1,41 +1,175 @@
-<!doctypehtml><html lang="en"><meta charset="UTF-8"><meta content="width=device-width,initial-scale=1"name="viewport"><title>Gallery - Dog Grooming</title><link href="css/styles.css"rel="stylesheet"><style>.grid-container{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:1000px;margin:2rem auto}.grid-item img{width:100%;border-radius:.75rem;box-shadow:0 2px 8px rgba(0,0,0,.08)}.staff-section{max-width:1000px;margin:3rem auto 2rem auto;padding:2rem 1rem;background:#f8f8f8;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,.06)}.staff-section h2{text-align:center;margin-bottom:2rem}.staff-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center}.staff-profile{background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,.08);padding:1.5rem 1rem;max-width:220px;text-align:center}.staff-profile img{width:150px;height:150px;object-fit:cover;border-radius:0;margin-bottom:1rem;box-shadow:0 1px 4px rgba(0,0,0,.1)}.staff-profile h3{margin:.5rem 0 .25rem 0;font-size:1.2rem;color:#4e8cff}.staff-profile p{font-size:1rem;color:#444}@media (max-width:700px){.grid-container{grid-template-columns:repeat(2,1fr)}.staff-grid{flex-direction:column;align-items:center}}</style><header><nav class="navbar"><div class="logo"><img alt="Snazzy Paws Grooming Logo"src="images/snazzy-paws-logo.jpg"class="logo-img"></div><ul class="nav-links"><li><a href="index.html">Home</a><li><a href="services.html">Services</a><li><a href="gallery.html"class="active">Gallery</a><li><a href="booking.html">Booking</a><li><a href="contact.html">Contact</a></ul></nav></header><h1>Snazzy Paws Groomed Dogs</h1><p>View our gallery of satisfied clients!<main><section class="gallery"><div class="grid-container"><div class="grid-item"><img alt="Groomed Dog 1"src="images/dog1.jpg"></div><div class="grid-item"><img alt="Groomed Dog 2"src="images/dog2.jpg"></div><div class="grid-item"><img alt="Groomed Dog 3"src="images/dog3.jpg"></div><div class="grid-item"><img alt="Groomed Dog 4"src="images/dog4.jpg"></div><div class="grid-item"><img alt="Groomed Dog 5"src="images/dog5.jpg"></div><div class="grid-item"><img alt="Groomed Dog 6"src="images/dog6.jpg"></div><div class="grid-item"><img alt="Groomed Dog 7"src="images/dog7.jpg"></div><div class="grid-item"><img alt="Groomed Dog 8"src="images/dog8.jpg"></div><div class="grid-item"><img alt="Groomed Dog 9"src="images/dog9.jpg"></div><div class="grid-item"><img alt="Groomed Dog 10"src="images/dog10.jpg"></div><div class="grid-item"><img alt="Groomed Dog 11"src="images/dog11.jpg"></div><div class="grid-item"><img alt="Groomed Dog 12"src="images/dog12.jpg"></div><div class="grid-item"><img alt="Groomed Dog 13"src="images/dog13.jpg"></div><div class="grid-item"><img alt="Groomed Dog 14"src="images/dog14.jpg"></div><div class="grid-item"><img alt="Groomed Dog 15"src="images/dog15.jpg"></div><div class="grid-item"><img alt="Groomed Dog 16"src="images/dog16.jpg"></div></div></section><div id="lightbox"style="display:none"><span id="lightbox-close">×</span> <img alt="Large Dog Photo"src=""id="lightbox-img"></div><script>// Lightbox functionality
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const closeBtn = document.getElementById('lightbox-close');
-            document.querySelectorAll('.grid-item img').forEach(img => {
-                img.addEventListener('click', function() {
-                    lightbox.style.display = 'flex';
-                    lightboxImg.src = this.src;
-                    lightboxImg.alt = this.alt;
-                });
-            });
-            closeBtn.onclick = function() {
-                lightbox.style.display = 'none';
-            };
-            lightbox.onclick = function(e) {
-                if (e.target === lightbox) lightbox.style.display = 'none';
-            };</script><section class="staff-section"><h2>Meet Our Team</h2><p>Our dedicated team of professional groomers has 30+ years of experience between them!<div class="staff-grid"><div class="staff-profile"><img alt="Staff Member 1"src="images/staff1.jpg"><h3>Jill Saunders</h3><p>Owner & Head Groomer<br>Jill has 15+ years of experience, she is passionate about dog care and styling.</div><div class="staff-profile"><img alt="Staff Member 2"src="images/staff2.jpg"><h3>Jack Bennet</h3><p>Senior Groomer<br>Jack is our expert in breed-specific cuts and gentle handling for nervous pets.</div><div class="staff-profile"><img alt="Staff Member 3"src="images/staff3.jpg"><h3>Sasha Lively</h3><p>Grooming Assistant<br>Sasha handles even the most wild pup with care, she specializes in puppy and senior dog care.</div><div class="staff-profile"><img alt="Staff Member 4"src="images/staff4.jpg"><h3>Tracy Green</h3><p>Reception & Bathing<br>Tracey is our Receptionist, and dog bathing expert.</div></div></section></main><section class="address-section"style="max-width:500px;margin:1.5rem auto 2rem auto;text-align:center"><h2>Our Location</h2><p>Snazzy Paws Grooming<br>4-2 Casey Avenue<br>Hamilton 3214<br>New Zealand<section class="open-status-section"style="max-width:500px;margin:2rem auto;text-align:center"><hr class="footer-divider"><footer></section><h2>Opening Hours</h2><div id="open-status"style="font-size:1.3rem;font-weight:700;margin-top:1rem"></div><p style="margin-top:.5rem;color:#666">Mon–Fri: 9am–5pm<br>Sat: 10am–2pm<br>Sun: Closed</p><script>// Opening hours
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery - Snazzy Paws Grooming</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .logo-img { max-width: 200px; height: auto; }
+    .social-icon { width: 120px; height: 120px; margin: 0 8px; object-fit: contain; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .gallery-grid img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: .75rem; box-shadow: 0 2px 8px rgba(0,0,0,.08); cursor: pointer; }
+    .staff-section { max-width: 1000px; margin: 3rem auto 2rem auto; padding: 2rem 1rem; background: #f8f8f8; border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+    .staff-section h2 { text-align: center; margin-bottom: 2rem; }
+    .staff-grid { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
+    .staff-profile { background: #fff; border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,.08); padding: 1.5rem 1rem; max-width: 220px; text-align: center; }
+    .staff-profile img { width: 120px; height: 120px; object-fit: cover; border-radius: 50%; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,.1); }
+    .staff-profile h3 { margin: .5rem 0 .25rem 0; font-size: 1.2rem; color: #4e8cff; }
+    .staff-profile p { font-size: 1rem; color: #444; }
+    @media (max-width: 700px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .staff-grid { flex-direction: column; align-items: center; }
+    }
+    /* Lightbox styles */
+    #lightbox {
+      display: none; position: fixed; z-index: 1050; left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.8); align-items: center; justify-content: center;
+    }
+    #lightbox img { max-width: 90vw; max-height: 80vh; border-radius: 1rem; }
+    #lightbox-close {
+      position: absolute; top: 2rem; right: 2rem; color: #fff; font-size: 2.5rem; cursor: pointer; font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/snazzy-paws-logo.jpg" alt="Snazzy Paws Grooming Logo" class="logo-img d-inline-block align-text-top">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="roster.html">Staff Roster</a></li>
+          <li class="nav-item"><a class="nav-link" href="privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <h1 class="text-center mb-4">Snazzy Paws Groomed Dogs</h1>
+    <p class="text-center">-View our gallery of satisfied clients-</p>
+    <section class="gallery mb-5">
+      <div class="gallery-grid">
+        <img alt="Groomed Dog 1" src="images/dog1.jpg">
+        <img alt="Groomed Dog 2" src="images/dog2.jpg">
+        <img alt="Groomed Dog 3" src="images/dog3.jpg">
+        <img alt="Groomed Dog 4" src="images/dog4.jpg">
+        <img alt="Groomed Dog 5" src="images/dog5.jpg">
+        <img alt="Groomed Dog 6" src="images/dog6.jpg">
+        <img alt="Groomed Dog 7" src="images/dog7.jpg">
+        <img alt="Groomed Dog 8" src="images/dog8.jpg">
+        <img alt="Groomed Dog 9" src="images/dog9.jpg">
+        <img alt="Groomed Dog 10" src="images/dog10.jpg">
+        <img alt="Groomed Dog 11" src="images/dog11.jpg">
+        <img alt="Groomed Dog 12" src="images/dog12.jpg">
+        <img alt="Groomed Dog 13" src="images/dog13.jpg">
+        <img alt="Groomed Dog 14" src="images/dog14.jpg">
+        <img alt="Groomed Dog 15" src="images/dog15.jpg">
+        <img alt="Groomed Dog 16" src="images/dog16.jpg">
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+<div id="lightbox">
+  <span id="lightbox-close">&times;</span>
+  <img alt="Large Dog Photo" src="" id="lightbox-img">
+</div>
+
+    <!-- Staff Section -->
+    <section class="staff-section mt-5">
+      <h2>Meet Our Team</h2>
+      <p class="text-center mb-4">Our dedicated team of professional groomers has 30+ years of experience between them!</p>
+      <div class="staff-grid">
+        <div class="staff-profile">
+          <img alt="Staff Member 1" src="images/staff1.jpg">
+          <h3>Jill Saunders</h3>
+          <p>Owner & Head Groomer<br>Jill has 15+ years of experience, she is passionate about dog care and styling.</p>
+        </div>
+        <div class="staff-profile">
+          <img alt="Staff Member 2" src="images/staff2.jpg">
+          <h3>Jack Bennet</h3>
+          <p>Senior Groomer<br>Jack is our expert in breed-specific cuts and gentle handling for nervous pets.</p>
+        </div>
+        <div class="staff-profile">
+          <img alt="Staff Member 3" src="images/staff3.jpg">
+          <h3>Sasha Lively</h3>
+          <p>Grooming Assistant<br>Sasha handles even the most wild pup with care, she specializes in puppy and senior dog care.</p>
+        </div>
+        <div class="staff-profile">
+          <img alt="Staff Member 4" src="images/staff4.jpg">
+          <h3>Tracy Green</h3>
+          <p>Reception & Bathing<br>Tracey is our Receptionist, and dog bathing expert.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container mt-5 text-center">
+    <h2>Our Location</h2>
+    <p>Snazzy Paws Grooming<br>4-2 Casey Avenue<br>Hamilton 3214, New Zealand</p>
+    <hr>
+    <h2>Opening Hours</h2>
+    <div id="open-status" class="fw-bold"></div>
+    <p class="text-muted">Mon–Fri: 9am–5pm<br>Sat: 10am–2pm<br>Sun: Closed</p>
+    <p>Give us a call: 09 123 4567<br>Email: <a href="mailto:SnazzyPawsGrooming.com">SnazzyPawsGrooming.com</a></p>
+    <div class="d-flex justify-content-center gap-3 my-2">
+      <a href="https://facebook.com/" target="_blank"><img src="images/facebook-icon.png" alt="Facebook" class="social-icon"></a>
+      <a href="https://instagram.com/" target="_blank"><img src="images/instagram-icon.png" alt="Instagram" class="social-icon"></a>
+      <a href="https://tiktok.com/" target="_blank"><img src="images/tiktok-icon.png" alt="TikTok" class="social-icon"></a>
+    </div>
+    <p class="text-muted">© 2025 Snazzy Paws Grooming. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Lightbox functionality
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.getElementById('lightbox-close');
+document.querySelectorAll('.gallery-grid img').forEach(img => {
+  img.addEventListener('click', function() {
+    lightbox.style.display = 'flex';
+    lightboxImg.src = this.src;
+    lightboxImg.alt = this.alt;
+  });
+});
+closeBtn.onclick = function(event) {
+  event.stopPropagation();
+  lightbox.style.display = 'none';
+};
+lightboxImg.onclick = function(event) {
+  event.stopPropagation(); // Prevent closing when clicking the image itself
+};
+lightbox.onclick = function(e) {
+  if (e.target === lightbox) lightbox.style.display = 'none';
+};
+
+    // Opening hours
     function checkOpenStatus() {
-        const now = new Date();
-        const day = now.getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
-        const hour = now.getHours();
-        const min = now.getMinutes();
-        let open = false;
+      const now = new Date();
+      const day = now.getDay();
+      const hour = now.getHours();
+      const min = now.getMinutes();
+      let open = false;
+      if (day >= 1 && day <= 5) open = (hour > 9 || (hour === 9 && min >= 0)) && (hour < 17);
+      else if (day === 6) open = (hour > 10 || (hour === 10 && min >= 0)) && (hour < 14);
 
-        if (day >= 1 && day <= 5) { // Mon-Fri
-            open = (hour > 9 || (hour === 9 && min >= 0)) && (hour < 17);
-        } else if (day === 6) { // Sat
-            open = (hour > 10 || (hour === 10 && min >= 0)) && (hour < 14);
-        }
-
-        const statusDiv = document.getElementById('open-status');
-        if (open) {
-            statusDiv.textContent = "We're open!";
-            statusDiv.style.color = "#4bbf6b";
-        } else {
-            statusDiv.textContent = "Sorry, we're closed.";
-            statusDiv.style.color = "#e57373";
-        }
+      const statusDiv = document.getElementById('open-status');
+      statusDiv.textContent = open ? "We're open!" : "Sorry, we're closed.";
+      statusDiv.style.color = open ? "#4bbf6b" : "#e57373";
     }
     checkOpenStatus();
-    setInterval(checkOpenStatus, 60000); // Update every minute</script><section class="phone-section"style="max-width:500px;margin:2rem auto;text-align:center"><p>Give us a call at: 09 123 4567<p>Or email us at: <a href="mailto:SnazzyPawsGrooming.com">SnazzyPawsGrooming.com</a><div class="social-links"><a href="https://facebook.com/"aria-label="Facebook"target="_blank"><img alt="Facebook"src="images/facebook-icon.png"class="social-icon"> </a><a href="https://instagram.com/"aria-label="Instagram"target="_blank"><img alt="Instagram"src="images/instagram-icon.png"class="social-icon"> </a><a href="https://tiktok.com/"aria-label="TikTok"target="_blank"><img alt="TikTok"src="images/tiktok-icon.png"class="social-icon"></a></div></section><p>© 2025 Snazzy Paws Grooming. All rights reserved.
+    setInterval(checkOpenStatus, 60000);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
